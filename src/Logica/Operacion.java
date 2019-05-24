@@ -16,7 +16,7 @@ public class Operacion {
     public Operacion() {
         this.resultado = "";
     }
-
+    
     public String getResultado(String num1, String num2, String signo) {
         int total=0;
         if (signo.equals("+")){
