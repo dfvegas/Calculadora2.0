@@ -15,17 +15,19 @@ import Logica.Operacion;
 public class Calculadora extends javax.swing.JFrame {
 
     private Operacion operacion = new Operacion();
-    private Conversion resultado = new Conversion();
+    private Conversion convertir = new Conversion();
 
     /**
      * Creates new form Calculadora
      */
     public Calculadora() {
         initComponents();
+        rbtnDec.setSelected(true);
     }
     String num1 = "";
     String num2 = "";
     String signo = "";
+    String total = "";
     int base1 = 10;
     int base2 = 0;
 
@@ -70,6 +72,7 @@ public class Calculadora extends javax.swing.JFrame {
         rbtnOct = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
         setResizable(false);
 
         lblTitulo.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
@@ -378,7 +381,6 @@ public class Calculadora extends javax.swing.JFrame {
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
         lblVisualizador.setText(lblVisualizador.getText() + "4");
-        
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
@@ -402,8 +404,23 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
-        num2 = lblVisualizador.getText();
-        lblVisualizador.setText(operacion.getResultado(num1, num2, signo));
+        if (rbtnBin.isSelected()) {
+            num2 = convertir.convertir(2, 10, lblVisualizador.getText());
+            total = convertir.convertir(10, 2, operacion.getResultado(num1, num2, signo));
+            lblVisualizador.setText(total);
+        } else if (rbtnDec.isSelected()) {
+            num2 = lblVisualizador.getText();
+            total = operacion.getResultado(num1, num2, signo);
+            lblVisualizador.setText(total);
+        } else if (rbtnOct.isSelected()) {
+            num2 = convertir.convertir(8, 10, lblVisualizador.getText());
+            total = convertir.convertir(10, 8, operacion.getResultado(num1, num2, signo));
+            lblVisualizador.setText(total);
+        } else if (rbtnHex.isSelected()) {
+            num2 = convertir.convertir(16, 10, lblVisualizador.getText());
+            total = convertir.convertir(10, 16, operacion.getResultado(num1, num2, signo));
+            lblVisualizador.setText(total);
+        }
     }//GEN-LAST:event_btnIgualActionPerformed
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
@@ -412,51 +429,159 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBorrarActionPerformed
 
     private void btnRestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestarActionPerformed
-        num1 = lblVisualizador.getText();
-        signo = "-";
-        lblVisualizador.setText("");
+        if (rbtnBin.isSelected()) {
+            base2 = 10;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            signo = "-";
+            lblVisualizador.setText("");
+        } else if (rbtnDec.isSelected()) {
+            num1 = lblVisualizador.getText();
+            signo = "-";
+            lblVisualizador.setText("");
+        } else if (rbtnOct.isSelected()) {
+            base2 = 10;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            signo = "-";
+            lblVisualizador.setText("");
+        } else if (rbtnHex.isSelected()) {
+            base2 = 10;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            signo = "-";
+            lblVisualizador.setText("");
+        }
     }//GEN-LAST:event_btnRestarActionPerformed
 
     private void btnSumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumarActionPerformed
-        num1 = lblVisualizador.getText();
-        signo = "+";
-        lblVisualizador.setText("");
+        if (rbtnBin.isSelected()) {
+            base2 = 10;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            signo = "+";
+            lblVisualizador.setText("");
+        } else if (rbtnDec.isSelected()) {
+            num1 = lblVisualizador.getText();
+            signo = "+";
+            lblVisualizador.setText("");
+        } else if (rbtnOct.isSelected()) {
+            base2 = 10;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            signo = "+";
+            lblVisualizador.setText("");
+        } else if (rbtnHex.isSelected()) {
+            base2 = 10;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            signo = "+";
+            lblVisualizador.setText("");
+        }
     }//GEN-LAST:event_btnSumarActionPerformed
 
     private void btnMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicarActionPerformed
-        num1 = lblVisualizador.getText();
-        signo = "X";
-        lblVisualizador.setText("");
+        if (rbtnBin.isSelected()) {
+            base2 = 10;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            signo = "X";
+            lblVisualizador.setText("");
+        } else if (rbtnDec.isSelected()) {
+            num1 = lblVisualizador.getText();
+            signo = "X";
+            lblVisualizador.setText("");
+        } else if (rbtnOct.isSelected()) {
+            base2 = 10;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            signo = "X";
+            lblVisualizador.setText("");
+        } else if (rbtnHex.isSelected()) {
+            base2 = 10;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            signo = "X";
+            lblVisualizador.setText("");
+        }
     }//GEN-LAST:event_btnMultiplicarActionPerformed
 
     private void btnDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDividirActionPerformed
-        num1 = lblVisualizador.getText();
-        signo = "/";
-        lblVisualizador.setText("");
+        if (rbtnBin.isSelected()) {
+            base2 = 10;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            signo = "/";
+            lblVisualizador.setText("");
+        } else if (rbtnDec.isSelected()) {
+            num1 = lblVisualizador.getText();
+            signo = "/";
+            lblVisualizador.setText("");
+        } else if (rbtnOct.isSelected()) {
+            base2 = 10;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            signo = "/";
+            lblVisualizador.setText("");
+        } else if (rbtnHex.isSelected()) {
+            base2 = 10;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            signo = "/";
+            lblVisualizador.setText("");
+        }
     }//GEN-LAST:event_btnDividirActionPerformed
 
     private void rbtnBinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnBinActionPerformed
-        base2 = 2;
-        num1 = resultado.convertir(base1, base2, lblVisualizador.getText());
-        lblVisualizador.setText(num1);
+        if (lblVisualizador.getText().equals("")) {
+            base1 = 2;
+        } else if (lblVisualizador.getText().equals(total)) {
+            base2 = 2;
+            total = convertir.convertir(base1, base2, lblVisualizador.getText());
+            lblVisualizador.setText(total);
+            base1 = 2;
+        } else {
+            base2 = 2;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            lblVisualizador.setText(num1);
+            base1 = 2;
+        }
     }//GEN-LAST:event_rbtnBinActionPerformed
 
     private void rbtnOctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnOctActionPerformed
-        base2 = 8;
-        num1 = resultado.convertir(base1, base2, lblVisualizador.getText());
-        lblVisualizador.setText(num1);
+        if (lblVisualizador.getText().equals("")) {
+            base1 = 8;
+        } else if (lblVisualizador.getText().equals(total)) {
+            base2 = 8;
+            total = convertir.convertir(base1, base2, lblVisualizador.getText());
+            lblVisualizador.setText(total);
+            base1 = 8;
+        } else {
+            base2 = 8;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            lblVisualizador.setText(num1);
+            base1 = 8;
+        }
     }//GEN-LAST:event_rbtnOctActionPerformed
 
     private void rbtnDecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnDecActionPerformed
-        base2 = 10;
-        num1 = resultado.convertir(base1, base2, lblVisualizador.getText());
-        lblVisualizador.setText(num1);
+        if (lblVisualizador.getText().equals("")) {
+            base1 = 10;
+        } else if (lblVisualizador.getText().equals(total)) {
+            base2 = 10;
+            total = convertir.convertir(base1, base2, lblVisualizador.getText());
+            lblVisualizador.setText(total);
+            base1 = 10;
+        } else {
+            base2 = 10;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            lblVisualizador.setText(num1);
+            base1 = 10;
+        }
     }//GEN-LAST:event_rbtnDecActionPerformed
 
     private void rbtnHexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnHexActionPerformed
-        base2 = 16;
-        num1 = resultado.convertir(base1, base2, lblVisualizador.getText());
-        lblVisualizador.setText(num1);
+        if (lblVisualizador.getText().equals("")) {
+            base1 = 16;
+        } else if (lblVisualizador.getText().equals(total)) {
+            base2 = 16;
+            total = convertir.convertir(base1, base2, lblVisualizador.getText());
+            lblVisualizador.setText(total);
+            base1 = 16;
+        } else {
+            base2 = 16;
+            num1 = convertir.convertir(base1, base2, lblVisualizador.getText());
+            lblVisualizador.setText(num1);
+            base1 = 16;
+        }
     }//GEN-LAST:event_rbtnHexActionPerformed
 
     /**
