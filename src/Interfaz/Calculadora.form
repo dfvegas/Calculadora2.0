@@ -340,31 +340,49 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="D"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnE">
       <Properties>
         <Property name="text" type="java.lang.String" value="E"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnF">
       <Properties>
         <Property name="text" type="java.lang.String" value="F"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnA">
       <Properties>
         <Property name="text" type="java.lang.String" value="A"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnB">
       <Properties>
         <Property name="text" type="java.lang.String" value="B"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnC">
       <Properties>
         <Property name="text" type="java.lang.String" value="C"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbtnBin">
       <Properties>

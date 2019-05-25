@@ -199,16 +199,46 @@ public class Calculadora extends javax.swing.JFrame {
         });
 
         btnD.setText("D");
+        btnD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDActionPerformed(evt);
+            }
+        });
 
         btnE.setText("E");
+        btnE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEActionPerformed(evt);
+            }
+        });
 
         btnF.setText("F");
+        btnF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFActionPerformed(evt);
+            }
+        });
 
         btnA.setText("A");
+        btnA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAActionPerformed(evt);
+            }
+        });
 
         btnB.setText("B");
+        btnB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBActionPerformed(evt);
+            }
+        });
 
         btnC.setText("C");
+        btnC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(rbtnBin);
         rbtnBin.setText("Bi");
@@ -583,6 +613,30 @@ public class Calculadora extends javax.swing.JFrame {
             base1 = 16;
         }
     }//GEN-LAST:event_rbtnHexActionPerformed
+
+    private void btnAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAActionPerformed
+        lblVisualizador.setText(lblVisualizador.getText() + "a");
+    }//GEN-LAST:event_btnAActionPerformed
+
+    private void btnBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBActionPerformed
+        lblVisualizador.setText(lblVisualizador.getText() + "b");
+    }//GEN-LAST:event_btnBActionPerformed
+
+    private void btnCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCActionPerformed
+        lblVisualizador.setText(lblVisualizador.getText() + "c");
+    }//GEN-LAST:event_btnCActionPerformed
+
+    private void btnDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDActionPerformed
+        lblVisualizador.setText(lblVisualizador.getText() + "d");
+    }//GEN-LAST:event_btnDActionPerformed
+
+    private void btnEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEActionPerformed
+        lblVisualizador.setText(lblVisualizador.getText() + "e");
+    }//GEN-LAST:event_btnEActionPerformed
+
+    private void btnFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFActionPerformed
+        lblVisualizador.setText(lblVisualizador.getText() + "f");
+    }//GEN-LAST:event_btnFActionPerformed
 
     /**
      * @param args the command line arguments
